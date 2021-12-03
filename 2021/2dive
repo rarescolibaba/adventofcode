@@ -1,0 +1,37 @@
+/** Part One **/
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+ifstream fin("input");
+
+int main() {
+	int h = 0, v = 0, s;
+	string d;
+	while (fin>>d>>s) {
+		if (d == "forward") h+=s;
+		else if (d == "up") v-=s;
+		else v+=s;
+	}
+	cout<<h*v<<endl;
+}
+
+/** Part Two **/
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+ifstream fin("input");
+
+int main() {
+	int h = 0, v = 0, aim = 0, s;
+	string d;
+	while (fin>>d>>s) {
+		if (d == "forward") h+=s, v+=aim*s;
+		else if (d == "up") aim-=s;
+		else aim+=s;
+	}
+	cout<<h*v<<endl;
+}
