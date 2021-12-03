@@ -1,3 +1,21 @@
+/** Part One **/
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+ifstream fin("input");
+
+int main() {
+	int x, prev, i = 0;
+	fin>>prev;
+	while (fin>>x) {
+		if (x > prev) i++;
+		prev = x;
+	}
+	cout<<i<<endl;
+}
+
 /** Part Two **/
 
 #include <iostream>
