@@ -1,0 +1,20 @@
+/** Part Two **/
+
+#include <iostream>
+#include <fstream>
+#include <queue>
+using namespace std;
+
+ifstream fin("input");
+
+int main() {
+	queue<int> buffa;
+	int x, i = 0;
+	for (int i = 0; i < 3; i++) fin>>x, buffa.push(x);
+	while (fin>>x) {
+		buffa.push(x);
+		if (buffa.back() > buffa.front()) i++;
+		buffa.pop();
+	}
+	cout<<i<<endl;
+}
